@@ -10,25 +10,34 @@ The results provide the following info in JSON format:
 - If of same size, provides insight in where the diff are
 ```
 
-##Required technology
-- .NET Core 1.1
-
+## Required technology
+.NET Core 1.1
 
 ## Sample input/output
-
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
-
-## Motivation
-
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+| Request               | Response           |
+| --------------------- | ------------------ |
+| GET /v1/diff/1        | 404 Not Found      |
+| POST /v1/diff/1/left  |                    |
+  {                    
+  "data": "AAAAAA=="   
+ }	201 Created     
+|  Content Cell         |                    |
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+Sulution could be started from you preferable IDE like Microsoft Visual Studio, Vissual Studio Code or Jetbrains Rider.
+Also you could do it manually from console/terminal following this short instruction:
+
+- Navigate to the root solution folder and call `dotnet restore` command
+- Navigate to the Web project folder `DiffWebApi.Web` and call `dotnet run` command
 
 ## Tests
 
-Tests are written using xUnit testing framework and could be started from you prefered IDE like Microsoft Visual Studio or using console/terminal command `dotnet test`.
+Tests are written using xUnit testing framework and could be started from you preferable IDE like Microsoft Visual Studio.
+Also you could do it manually from console/terminal following this short instruction:
+
+- Navigate to the root solution folder and call `dotnet build` command
+- Navigate to the Tests project folder `DiffWebApi.Tests` and call `dotnet test` command
 
 ## License
 
