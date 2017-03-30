@@ -29,7 +29,7 @@ The results provide the following info in JSON format:
 
 ## Installation
 
-Sulution could be started from you preferable IDE like Microsoft Visual Studio, Vissual Studio Code or Jetbrains Rider.
+Solution could be started from you preferable IDE like Microsoft Visual Studio, Visual Studio Code or Jetbrains Rider.
 Also you could do it manually from console/terminal following this short instruction:
 
 - Navigate to the root solution folder and call `dotnet restore` command
