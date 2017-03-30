@@ -14,14 +14,18 @@ The results provide the following info in JSON format:
 .NET Core 1.1
 
 ## Sample input/output
-| Request               | Response           |
-| --------------------- | ------------------ |
+| Request | Response |
+| ---  | --- |
 | GET /v1/diff/1        | 404 Not Found      |
-| POST /v1/diff/1/left  |                    |
-  {                    
-  "data": "AAAAAA=="   
- }	201 Created     
-|  Content Cell         |                    |
+| POST /v1/diff/1/left {"data": "aGVsbG8="}	 | 201 Created  |  
+| POST /v1/diff/1/right {"data": "aGVsbG8="}  | 201 Created  |
+| GET /v1/diff/1 |200 OK {"diffResultType": "Equals"} |
+|    |     |
+| POST /v1/diff/1/left {"data": "aGVsbG9mZg=="}  | 201 Created  |
+| GET /v1/diff/1 |200 OK {"diffResultType": "SizeDoNotMatch"} |
+|    |   |
+| POST /v1/diff/1/left {"data": "aGVycm8="}  | 201 Created  |
+| GET /v1/diff/1 |200 OK {"diffResultType": "ContentDoNotMatch", "diffs": [{"offset": 2, "length": 2}} |
 
 ## Installation
 
