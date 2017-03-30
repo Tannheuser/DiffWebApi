@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.0.0
+MinimumVisualStudioVersion = 10.0.0.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiffWebApi.Web", "DiffWebApi.Web\DiffWebApi.Web.csproj", "{DF86EDEB-35E9-47F1-ADD1-D9FB663AB3C5}"
+EndProject
+Project("{ED3D029C-F027-4CCB-8A73-FBE9FC883D34}") = "DiffWebApi.Core", "DiffWebApi.Core\DiffWebApi.Core.csproj", "{E797A947-6714-4758-B449-17A957997F31}"
+EndProject
+Project("{D7D6A981-E310-4AFE-91CE-EEC27A49FCB4}") = "DiffWebApi.Tests", "DiffWebApi.Tests\DiffWebApi.Tests.csproj", "{4EB5CD40-B0BE-44A1-A966-A66F2F51B369}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF86EDEB-35E9-47F1-ADD1-D9FB663AB3C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF86EDEB-35E9-47F1-ADD1-D9FB663AB3C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF86EDEB-35E9-47F1-ADD1-D9FB663AB3C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF86EDEB-35E9-47F1-ADD1-D9FB663AB3C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E797A947-6714-4758-B449-17A957997F31}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E797A947-6714-4758-B449-17A957997F31}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E797A947-6714-4758-B449-17A957997F31}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E797A947-6714-4758-B449-17A957997F31}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EB5CD40-B0BE-44A1-A966-A66F2F51B369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EB5CD40-B0BE-44A1-A966-A66F2F51B369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EB5CD40-B0BE-44A1-A966-A66F2F51B369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EB5CD40-B0BE-44A1-A966-A66F2F51B369}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
