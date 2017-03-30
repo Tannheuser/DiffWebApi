@@ -1,4 +1,6 @@
-﻿namespace DiffWebApi.Web.Data
+﻿using System;
+
+namespace DiffWebApi.Web.ViewModels
 {
     public class Base64Dto
     {
@@ -8,5 +10,6 @@
         }
 
         public byte[] Data { get; set; }
+        
     }
 }

@@ -2,6 +2,7 @@
 {
     public enum PositionType
     {
+        Invalid,
         Left,
         Right
     }

@@ -2,7 +2,6 @@
 using System.Linq;
 using DiffWebApi.Core.Models;
 using DiffWebApi.Core.Services.Abstract;
-using DiffWebApi.Web.Data;
 using DiffWebApi.Web.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -39,14 +38,14 @@ namespace DiffWebApi.Web.Controllers
         }
 
         [HttpPost]
-        [Route("{id:int}/{positionString:required}")]
-        public IActionResult AddPositionData(int id, string positionString, [FromBody] Base64Dto data)
+        [Route("{id:int}/{position:required}")]
+        public IActionResult AddPositionData(int id, PositionType position, [FromBody] Base64Dto data)
         {
             try
             {
-                if (!TryParsePositionString(positionString, out PositionType position))
+                if (position == PositionType.Invalid)
                 {
-                    return BadRequest("Specified position was not found");
+                    return BadRequest();
                 }
 
                 _comparisonService.AddOrUpdateData(id, position, data.Data);
@@ -58,12 +57,6 @@ namespace DiffWebApi.Web.Controllers
                 _logger.LogError(ex.Message);
                 return BadRequest(ex.Message);
             }
-            
-        }
-
-        private bool TryParsePositionString(string positionString, out PositionType position)
-        {
-            return Enum.TryParse(positionString, true, out position);
         }
     }
 }
