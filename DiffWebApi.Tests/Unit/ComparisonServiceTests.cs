@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using DiffWebApi.Core.Models;
 using DiffWebApi.Core.Repositories;
 using DiffWebApi.Core.Repositories.Abstract;
@@ -57,8 +58,8 @@ namespace DiffWebApi.Tests.Unit
             _comparisonService.AddOrUpdateData(newPair.Id, PositionType.Left, null);
             _comparisonService.AddOrUpdateData(newPair.Id, PositionType.Right, null);
 
-            var comparisonResult = _comparisonService.Compare(newPair.Id);
-            Assert.Equal(new ComparisonResult(EqualityType.Equals), comparisonResult);
+            var exception = Assert.Throws<Exception>(() => _comparisonService.Compare(newPair.Id));
+            Assert.Equal("Comparison pair with id = 10 is incomplete", exception.Message);
         }
 
         [Fact]
