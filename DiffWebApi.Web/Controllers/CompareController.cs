@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using DiffWebApi.Core.Models;
 using DiffWebApi.Core.Services.Abstract;
 using DiffWebApi.Web.ViewModels;
@@ -33,7 +32,7 @@ namespace DiffWebApi.Web.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return NotFound(ex.Message);
+                return NotFound();
             }
         }
 
@@ -55,7 +54,7 @@ namespace DiffWebApi.Web.Controllers
             catch (Exception ex)
             {
                 _logger.LogError(ex.Message);
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
     }

@@ -43,13 +43,18 @@ namespace DiffWebApi.Core.Services
         public ComparisonResult Compare(int id)
         {
             var pair = _repository.Get(id);
-  
-            if (pair.LeftPart == null && pair.RightPart == null)
+
+            if (pair == null)
             {
-                return new ComparisonResult(EqualityType.Equals);
+                throw new Exception($"Comparison pair with id = {id} does not exist");
             }
 
-            if (SizeDoesNotMatch(pair))
+            if (pair.LeftPart == null || pair.RightPart == null)
+            {
+                throw new Exception($"Comparison pair with id = {id} is incomplete");
+            }
+
+            if (pair.LeftPart.Length != pair.RightPart.Length)
             {
                 return new ComparisonResult(EqualityType.SizeDoNotMatch);
             }
@@ -80,11 +85,6 @@ namespace DiffWebApi.Core.Services
                 default:
                     throw new ArgumentOutOfRangeException(nameof(position), position, null);
             }
-        }
-
-        private bool SizeDoesNotMatch(PositionPair pair)
-        {
-            return (pair.LeftPart == null || pair.RightPart == null) || (pair.LeftPart.Length != pair.RightPart.Length);
         }
 
         private IList<ComparisonDiff> GetAllDiffs(PositionPair pair)
